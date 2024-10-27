@@ -2,9 +2,6 @@
 
 # Usage: python3 conv_ops.py c_in h_in w_in n_filt h_filt w_filt s p
 
-# Test Case: py conv_ops.py 2054 4 29 11 29 03.3 6778.136999646678 -0.030015095972430572 3838.027968
-# Converting from ecef to eci positions
-
 # Parameters:
 #  c_in : int 
 #   input channel count
