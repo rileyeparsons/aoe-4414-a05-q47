@@ -83,34 +83,31 @@ def conv_ops(c_in, h_in, w_in, n_filt, h_filt, w_filt, s, p):
   return c_out, h_out, w_out, adds, muls, divs
   
 # initialize script arguments
-year = None
-month = None
-day = None
-hour = None
-min = None
-sec = None
-ecef_x_km = None
-ecef_y_km = None
-ecef_z_km = None
+c_in = None
+h_in = None
+w_in = None
+n_filt = None
+h_filt = None
+w_filt = None
+s = None
+p = None
 
 # parse script arguments
-if len(sys.argv)==10:
-  year = int(sys.argv[1])
-  month = int(sys.argv[2])
-  day = int(sys.argv[3])
-  hour = int(sys.argv[4])
-  min = int(sys.argv[5])
-  sec = float(sys.argv[6])
-  ecef_x_km = float(sys.argv[7])
-  ecef_y_km = float(sys.argv[8])
-  ecef_z_km = float(sys.argv[9])
-
+if len(sys.argv)==9:
+  c_in = int(sys.argv[1])
+  h_in = int(sys.argv[2])
+  w_in = int(sys.argv[3])
+  n_filt = int(sys.argv[4])
+  h_filt = int(sys.argv[5])
+  w_filt = int(sys.argv[6])
+  s = int(sys.argv[7])
+  p = int(sys.argv[8])
 else:
   print('Usage: python3 conv_ops.py year month day hour minute second ecef_x_km ecef_y_km ecef_z_km')
   exit()
 
 # write script below this line
 if __name__ == '__main__':
-  conv_ops(year, month, day, hour, min, sec, ecef_x_km, ecef_y_km, ecef_z_km)
+  conv_ops(c_in, h_in, w_in, n_filt, h_filt, w_filt, s, p)
 else:
-  conv_ops(year, month, day, hour, min, sec, ecef_x_km, ecef_y_km, ecef_z_km)
+  conv_ops(c_in, h_in, w_in, n_filt, h_filt, w_filt, s, p)
