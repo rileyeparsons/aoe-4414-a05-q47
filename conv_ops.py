@@ -59,19 +59,15 @@ def get_adds(n_filt, h_out, w_out, c_in, h_filt, w_filt):
   adds = n_filt*h_out*w_out*c_in*h_filt*w_filt
   return adds
 
-def get_divs(c_in, h_out, w_out):
-  divs = c_in*h_out*w_out
-  return divs
-
 # main function
 def conv_ops(c_in, h_in, w_in, n_filt, h_filt, w_filt, s, p):
   
-  c_out = c_in
+  c_out = n_filt
   h_out = output_map_h(h_in, p, h_filt, s)
   w_out = output_map_w(w_in, p, w_filt, s)
   adds = get_adds(n_filt, h_out, w_out, c_in, h_filt, w_filt)
   muls = get_muls(n_filt, h_out, w_out, c_in, h_filt, w_filt)
-  divs = get_divs(c_in, h_out, w_out)
+  divs = 0
 
   print(c_out)
   print(h_out)
